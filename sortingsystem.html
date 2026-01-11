@@ -65,25 +65,24 @@
           Demonstrated system performance of <strong>SPI = 48 / 33 s = 1.45</strong> using the tested scoring method.
         </li>
         <li>
-          Only one observed slip event during demonstration; likely due to stepper overheating under sustained operation.
-        </li>
-      </ul>
 
       <h3>What I’d improve next</h3>
       <ul>
         <li>
-          Add closed-loop verification (e.g., encoder or limit-switch reference) to detect missed steps and automatically re-home the diverter if a slip occurs.
+          Add additional algorithms such as a pre-turn algorithm to make the stepper motor turn before the first piece in the queue reached the end gate to sort faster. 
         </li>
         <li>
-          Improve thermal management (heatsink/airflow or current limiting) and add firmware temperature/time-based derating to prevent overheating-related slip.
+          Improve the code effeciency to allow both the end gate sensor and reflectivity sensor to operate at the same time.  
         </li>
         <li>
-          Expand testing: log sensor readings + event timing over many runs to quantify detection accuracy and identify edge cases.
+          Improve thermal management (heatsink/airflow or current limiting) and add firmware temperature/time-based derating to prevent overheating-related slip of the stepper motor.
+        </li>
+        <li>
+          Optimize the s-curve for the stepper motor to make it turn faster without slipping. This would also allow an increase in the PWM belt speed.
         </li>
       </ul>
 
       <h3>Gallery</h3>
-      <p class="muted">Replace placeholders with photos, CAD renders, wiring diagrams, and screenshots of your code/serial logs.</p>
       <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
         <div class="thumb" style="grid-column:span 6;">
           <div class="thumb-placeholder">Conveyor + diverter (photo)</div>
@@ -110,3 +109,4 @@
   </script>
 </body>
 </html>
+
