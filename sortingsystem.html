@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project — Case Study</title>
+  <title>Object-Sorting Conveyor — Case Study</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,39 +21,79 @@
 
   <main class="container section">
     <div class="panel">
-      <h2 style="margin-top:0;">Object-Sorting Conveyor (Mechatronics)</h2>
-      <p class="muted">Tools: SolidWorks • AVR C • Sensors • Stepper motor control • Testing</p>
+      <h2 style="margin-top:0;">Object-Sorting Conveyor System (Mechatronics)</h2>
+      <p class="muted">
+        Tools: AVR C • ADC + interrupts • Reflectivity sensor • Stepper motor (S-curve profile) • DC motor (PWM belt) • Testing & calibration
+      </p>
 
       <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
 
       <h3>Problem</h3>
-      <p class="muted">One or two sentences: what you needed to achieve and constraints.</p>
+      <p class="muted">
+        Design and build an automated conveyor that detects objects using a reflectivity sensor and sorts them into bins using a stepper-driven diverter.
+        The main constraints were speed (finish the sorting task quickly) and reliability (avoid missed detections and stepper slipping at higher throughput).
+      </p>
 
       <h3>Approach</h3>
       <ul>
-        <li>System design (mechanical + electrical + software)</li>
-        <li>Key decisions (sensor placement, timing logic, acceleration profile)</li>
-        <li>What you tested and how you iterated</li>
+        <li>
+          Built an interrupt-driven detection pipeline in AVR C using ADC sampling to capture reflectivity changes as objects pass the sensor.
+        </li>
+        <li>
+          Implemented a queue-based timing/scheduling approach so the diverter could actuate at the correct moment relative to belt motion.
+        </li>
+        <li>
+          Tuned belt speed using PWM; identified ~70% duty cycle as the best tradeoff between throughput and stepper traction (higher caused slipping).
+        </li>
+        <li>
+          Developed S-curve acceleration profiles (delay arrays) for the stepper to reduce shock loading and prevent missed steps during 90° and 180° moves.
+        </li>
+        <li>
+          Iterated through calibration runs to set detection thresholds, validate timing offsets, and confirm repeatability across multiple trials.
+        </li>
       </ul>
 
       <h3>Results</h3>
       <ul>
-        <li>Performance numbers (speed, accuracy, SPI, cycle time, etc.)</li>
-        <li>Reliability improvements you made</li>
+        <li>
+          Achieved a stable “fast” configuration with belt PWM ~70% and reliable stepper actuation during continuous operation.
+        </li>
+        <li>
+          Stepper profiles: 90° turn used 50 delay entries totaling ~0.535 s; 180° turn used 100 delay entries totaling ~0.78 s.
+        </li>
+        <li>
+          Demonstrated system performance of <strong>SPI = 48 / 33 s = 1.45</strong> using the tested scoring method.
+        </li>
+        <li>
+          Only one observed slip event during demonstration; likely due to stepper overheating under sustained operation.
+        </li>
       </ul>
 
       <h3>What I’d improve next</h3>
       <ul>
-        <li>One upgrade idea</li>
-        <li>One risk/mitigation</li>
+        <li>
+          Add closed-loop verification (e.g., encoder or limit-switch reference) to detect missed steps and automatically re-home the diverter if a slip occurs.
+        </li>
+        <li>
+          Improve thermal management (heatsink/airflow or current limiting) and add firmware temperature/time-based derating to prevent overheating-related slip.
+        </li>
+        <li>
+          Expand testing: log sensor readings + event timing over many runs to quantify detection accuracy and identify edge cases.
+        </li>
       </ul>
 
       <h3>Gallery</h3>
-      <p class="muted">Add images by replacing placeholders below.</p>
+      <p class="muted">Replace placeholders with photos, CAD renders, wiring diagrams, and screenshots of your code/serial logs.</p>
       <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 1</div></div>
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 2</div></div>
-        <div class="thumb" style="grid-column:span 12;"><div class="thumb-placeholder">Image 3 (wide)</div></div>
+        <div class="thumb" style="grid-column:span 6;">
+          <div class="thumb-placeholder">Conveyor + diverter (photo)</div>
+        </div>
+        <div class="thumb" style="grid-column:span 6;">
+          <div class="thumb-placeholder">Wiring/sensor setup (photo)</div>
+        </div>
+        <div class="thumb" style="grid-column:span 12;">
+          <div class="thumb-placeholder">Control logic / timing diagram / test results (wide)</div>
+        </div>
       </div>
     </div>
   </main>
@@ -61,7 +101,7 @@
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> Kyle Erickson</span>
-      <span class="muted">Backed by real test data</span>
+      <span class="muted">Built, tested, iterated</span>
     </div>
   </footer>
 
