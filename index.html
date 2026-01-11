@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyle Erickson — Engineering Projects</title>
+  <meta name="description" content="Mechanical/Mechatronics engineering projects, CAD, controls, and analysis." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div>
+        <h1 class="title">Kyle Erickson</h1>
+        <p class="subtitle">Mechanical / Mechatronics Engineering • Projects Portfolio</p>
+      </div>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-card">
+        <h2>Hands-on engineering: design, build, test, iterate.</h2>
+        <p>
+          I build systems that mix CAD + fabrication + controls + analysis.
+          Below are selected projects with photos, results, and what I learned.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+        <div class="quick-stats">
+          <div class="stat"><span class="stat-num">CAD</span><span class="stat-label">SolidWorks</span></div>
+          <div class="stat"><span class="stat-num">Code</span><span class="stat-label">C / Python</span></div>
+          <div class="stat"><span class="stat-num">Build</span><span class="stat-label">3D print / shop</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container section">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Click a card to open a case-study page. Replace placeholders with your content.</p>
+      </div>
+
+      <div class="toolbar">
+        <input id="search" class="search" type="search" placeholder="Search projects (e.g., CAD, controls, FEA)..." />
+        <div class="chips" id="chips">
+          <button class="chip is-active" data-tag="all">All</button>
+          <button class="chip" data-tag="mechatronics">Mechatronics</button>
+          <button class="chip" data-tag="cad">CAD</button>
+          <button class="chip" data-tag="analysis">Analysis</button>
+          <button class="chip" data-tag="manufacturing">Manufacturing</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid">
+        <!-- Project 1 -->
+        <a class="card" href="project-template.html">
+          <div class="thumb">
+            <!-- Replace with an image later -->
+            <div class="thumb-placeholder">Image</div>
+          </div>
+          <div class="card-body">
+            <h3>Object-Sorting Conveyor (Mechatronics)</h3>
+            <p class="muted">
+              AVR C + sensors + stepper control. Tuned speed vs reliability (SPI).
+            </p>
+            <div class="tags">
+              <span class="tag" data-tag="mechatronics">mechatronics</span>
+              <span class="tag" data-tag="manufacturing">manufacturing</span>
+              <span class="tag" data-tag="analysis">analysis</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a class="card" href="project-template.html">
+          <div class="thumb"><div class="thumb-placeholder">Image</div></div>
+          <div class="card-body">
+            <h3>3D-Printed Parts + Design Iterations</h3>
+            <p class="muted">
+              Rapid prototyping workflow: tolerances, threads, fit testing, revisions.
+            </p>
+            <div class="tags">
+              <span class="tag" data-tag="cad">cad</span>
+              <span class="tag" data-tag="manufacturing">manufacturing</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a class="card" href="project-template.html">
+          <div class="thumb"><div class="thumb-placeholder">Image</div></div>
+          <div class="card-body">
+            <h3>FEA Stress Concentration Study</h3>
+            <p class="muted">
+              Compared simulated Kt vs theory and lab results; discussed assumptions.
+            </p>
+            <div class="tags">
+              <span class="tag" data-tag="analysis">analysis</span>
+              <span class="tag" data-tag="cad">cad</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="container section">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>What I like working on</h3>
+          <ul>
+            <li>Industrial + hands-on builds (mechanisms, sensors, controls)</li>
+            <li>CAD → prototype → test → iterate</li>
+            <li>Engineering analysis (stress/deflection, FEA, numerical methods)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Skills</h3>
+          <div class="skill-list">
+            <span class="pill">SolidWorks</span>
+            <span class="pill">DFM / 3D Printing</span>
+            <span class="pill">Arduino / AVR C</span>
+            <span class="pill">Python</span>
+            <span class="pill">FEA</span>
+            <span class="pill">Mechanical design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Put your email + LinkedIn + GitHub here.</p>
+      </div>
+      <div class="panel">
+        <p><strong>Email:</strong> your.email@example.com</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/your-handle</p>
+        <p><strong>GitHub:</strong> github.com/your-handle</p>
+        <p class="muted small">Tip: keep this page to 1 scroll. Recruiters love fast.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Kyle Erickson</span>
+      <span class="muted">Built with plain HTML/CSS</span>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // filtering
+    const chips = document.querySelectorAll(".chip");
+    const cards = Array.from(document.querySelectorAll(".card"));
+    const search = document.getElementById("search");
+
+    let activeTag = "all";
+    let query = "";
+
+    function matches(card) {
+      const text = card.innerText.toLowerCase();
+      const hasQuery = text.includes(query);
+      if (activeTag === "all") return hasQuery;
+      const tags = Array.from(card.querySelectorAll(".tag")).map(t => t.dataset.tag);
+      return hasQuery && tags.includes(activeTag);
+    }
+
+    function render() {
+      cards.forEach(card => {
+        card.style.display = matches(card) ? "" : "none";
+      });
+    }
+
+    chips.forEach(btn => {
+      btn.addEventListener("click", () => {
+        chips.forEach(b => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        activeTag = btn.dataset.tag;
+        render();
+      });
+    });
+
+    search.addEventListener("input", (e) => {
+      query = e.target.value.trim().toLowerCase();
+      render();
+    });
+  </script>
+</body>
+</html>
