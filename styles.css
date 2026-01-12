@@ -222,3 +222,17 @@ a{ color:inherit; text-decoration:none; }
     height: 220px;
   }
 }
+
+/* --- Gallery layout improvement for 3 images --- */
+.gallery-grid .gallery-thumb:nth-child(3){
+  grid-column: span 12;
+  height: 240px;
+}
+
+/* --- Make card thumbnails work with images --- */
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
