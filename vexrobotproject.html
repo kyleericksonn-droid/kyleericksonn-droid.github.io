@@ -21,52 +21,108 @@
 
   <main class="container section">
     <div class="panel">
-      <h2 style="margin-top:0;">Object-Sorting Conveyor (Mechatronics)</h2>
-      <p class="muted">Tools: SolidWorks • AVR C • Sensors • Stepper motor control • Testing</p>
+      <h2 style="margin-top:0;">Autonomous VEX Robot</h2>
+      <p class="muted">Tools: Robot C • AVR C • Sensors • Stepper motor control • Testing</p>
 
       <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
 
-      <h3>Problem</h3>
-      <p class="muted">One or two sentences: what you needed to achieve and constraints.</p>
-
-      <h3>Approach</h3>
+      <h3>Problem Definition</h3>
+      <p class="muted">
+      Ocean Networks Canada (ONC) experiences issues with falling debris, sedimentation, and biofouling interfering with underwater cameras and sensors.
+      The objective was to design an autonomous system capable of navigating toward a target and accurately deploying an object using onboard sensors and actuators, under tight spatial and reliability constraints. :contentReference[oaicite:1]{index=1}
+      </p>
+      
+      <h3>Design Concepts</h3>
       <ul>
-        <li>System design (mechanical + electrical + software)</li>
-        <li>Key decisions (sensor placement, timing logic, acceleration profile)</li>
-        <li>What you tested and how you iterated</li>
+        <li><strong>Design 1:</strong> Four-wheel platform with IR and ultrasonic sensors and a motor-driven claw mechanism for object release.</li>
+        <li><strong>Design 2:</strong> Car-inspired chassis focused on maneuverability, using a triangular drop mechanism and taped wheels to reduce cost.</li>
+        <li><strong>Design 3:</strong> Forklift-style concept using a two-pronged lifting fork actuated by a single motor.</li>
       </ul>
-
+      <p class="muted">
+      Each concept was evaluated based on chassis stability, sensor placement, reliability, and deployment accuracy. :contentReference[oaicite:2]{index=2}
+      </p>
+      
+      <h3>Sensor Research & Selection</h3>
+      <ul>
+        <li>
+          <strong>Ultrasonic sensor:</strong> Used for wall avoidance by emitting a sound pulse and measuring echo return time.
+        </li>
+        <li>
+          <strong>Infrared (IR) sensor:</strong> Used to detect the target IR light source and trigger object deployment.
+        </li>
+      </ul>
+      <p class="muted">
+      This multi-sensor approach allowed robust navigation while maintaining simple control logic suitable for a microcontroller-based system. :contentReference[oaicite:3]{index=3}
+      </p>
+      
+      <h3>Testing & Iteration</h3>
+      <ul>
+        <li>
+          Initial claw design caused the object to be knocked off target during release; the arm was raised to correct the issue.
+        </li>
+        <li>
+          Early wheel configurations lacked stability; additional support and revised motor placement improved handling.
+        </li>
+        <li>
+          Tape was applied to wheel treads in Design 2 to smooth turning behavior and reduce slipping.
+        </li>
+      </ul>
+      <p class="muted">
+      Testing highlighted the importance of mechanical alignment and actuation timing in achieving consistent performance. :contentReference[oaicite:4]{index=4}
+      </p>
+      
+      <h3>Design Evaluation</h3>
+      <p class="muted">
+      A weighted objectives chart was used to quantitatively compare designs based on chassis design, sensor integration, claw effectiveness, and positioning accuracy.
+      </p>
+      <ul>
+        <li><strong>Design 1:</strong> Highest overall score due to balanced mechanical simplicity and sensor performance.</li>
+        <li><strong>Design 2:</strong> Strong maneuverability but reduced precision during turns.</li>
+        <li><strong>Design 3:</strong> Conceptually robust but mechanically complex.</li>
+      </ul>
+      <p class="muted">Final selection favored Design 1 for reliability and ease of implementation. :contentReference[oaicite:5]{index=5}</p>
+      
       <h3>Results</h3>
       <ul>
-        <li>Performance numbers (speed, accuracy, SPI, cycle time, etc.)</li>
-        <li>Reliability improvements you made</li>
+        <li>Successfully demonstrated autonomous navigation toward an IR target.</li>
+        <li>Reliable object deployment without target interference.</li>
+        <li>Improved repeatability through mechanical and sensor refinements.</li>
       </ul>
-
-      <h3>What I’d improve next</h3>
+      
+      <h3>Lessons Learned</h3>
       <ul>
-        <li>One upgrade idea</li>
-        <li>One risk/mitigation</li>
+        <li>Small mechanical offsets can significantly affect deployment accuracy.</li>
+        <li>Sensor fusion improves robustness but requires careful calibration.</li>
+        <li>Early prototyping accelerates identification of failure modes.</li>
       </ul>
-
+      
       <h3>Gallery</h3>
-      <p class="muted">Add images by replacing placeholders below.</p>
-      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 1</div></div>
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 2</div></div>
-        <div class="thumb" style="grid-column:span 12;"><div class="thumb-placeholder">Image 3 (wide)</div></div>
+      <div class="gallery-grid">
+        <div class="gallery-thumb">
+          <img src="apparatus2.jpg" alt="Object sorting conveyor prototype">
+        </div>
+        <div class="gallery-thumb">
+          <img src="wiring.jpeg" alt="Microcontroller and sensor wiring">
+        </div>
+        <div class="gallery-video">
+          <video controls>
+            <source src="sorting2.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-row">
-      <span>© <span id="year"></span> Kyle Erickson</span>
-      <span class="muted">Backed by real test data</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      
+      </div>
+      </main>
+      
+      <footer class="footer">
+        <div class="container footer-row">
+          <span>© <span id="year"></span> Kyle Erickson</span>
+          <span class="muted">Built, tested, iterated</span>
+        </div>
+      </footer>
+      
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      </body>
+      </html>
