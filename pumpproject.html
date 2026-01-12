@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project — Case Study</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div>
+        <h1 class="title"><a href="index.html">Kyle Erickson</a></h1>
+        <p class="subtitle">Project case study</p>
+      </div>
+      <nav class="nav">
+        <a href="index.html#projects">Back to projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="panel">
+      <h2 style="margin-top:0;">Object-Sorting Conveyor (Mechatronics)</h2>
+      <p class="muted">Tools: SolidWorks • AVR C • Sensors • Stepper motor control • Testing</p>
+
+      <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
+
+      <h3>Problem</h3>
+      <p class="muted">One or two sentences: what you needed to achieve and constraints.</p>
+
+      <h3>Approach</h3>
+      <ul>
+        <li>System design (mechanical + electrical + software)</li>
+        <li>Key decisions (sensor placement, timing logic, acceleration profile)</li>
+        <li>What you tested and how you iterated</li>
+      </ul>
+
+      <h3>Results</h3>
+      <ul>
+        <li>Performance numbers (speed, accuracy, SPI, cycle time, etc.)</li>
+        <li>Reliability improvements you made</li>
+      </ul>
+
+      <h3>What I’d improve next</h3>
+      <ul>
+        <li>One upgrade idea</li>
+        <li>One risk/mitigation</li>
+      </ul>
+
+      <h3>Gallery</h3>
+      <p class="muted">Add images by replacing placeholders below.</p>
+      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
+        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 1</div></div>
+        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 2</div></div>
+        <div class="thumb" style="grid-column:span 12;"><div class="thumb-placeholder">Image 3 (wide)</div></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Kyle Erickson</span>
+      <span class="muted">Backed by real test data</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
