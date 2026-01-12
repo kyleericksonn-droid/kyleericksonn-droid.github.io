@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project — Case Study</title>
+  <title>Pump Failure Analysis — SLRC 10×8×21</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,47 +21,90 @@
 
   <main class="container section">
     <div class="panel">
-      <h2 style="margin-top:0;">Object-Sorting Conveyor (Mechatronics)</h2>
-      <p class="muted">Tools: SolidWorks • AVR C • Sensors • Stepper motor control • Testing</p>
+      <h2 style="margin-top:0;">Pump Failure Analysis — SLRC 10×8×21</h2>
+      <p class="muted">
+        Field troubleshooting • Mechanical inspection • Wear analysis • Root cause summary • Rebuild scope
+      </p>
 
       <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
 
-      <h3>Problem</h3>
-      <p class="muted">One or two sentences: what you needed to achieve and constraints.</p>
+      <h3>Context</h3>
+      <p class="muted">
+        Worksite visit to an aggregate processing plant to support the maintenance crew and engineers with pump training
+        and to assess underperforming parts of the mineral processing system. During inspection, an SLRC 10×8×21
+        severe-duty, rubber-lined centrifugal pump was found failed and removed for teardown.
+      </p>
 
-      <h3>Approach</h3>
+      <h3>Problem statement</h3>
       <ul>
-        <li>System design (mechanical + electrical + software)</li>
-        <li>Key decisions (sensor placement, timing logic, acceleration profile)</li>
-        <li>What you tested and how you iterated</li>
+        <li>Pump was in a failed state: <strong>impeller could not rotate</strong>.</li>
+        <li>Operational symptoms included reduced performance and evidence of abnormal internal wear.</li>
       </ul>
 
-      <h3>Results</h3>
+      <h3>Inspection findings</h3>
       <ul>
-        <li>Performance numbers (speed, accuracy, SPI, cycle time, etc.)</li>
-        <li>Reliability improvements you made</li>
+        <li><strong>Impeller clearance was excessive</strong> (out of tolerance), which contributed to poor sealing and internal wear.</li>
+        <li><strong>Packing was severely worn (“shot”)</strong>, consistent with oversized impeller clearance and poor sealing.</li>
+        <li>Upon removing the front casing, the <strong>front wear plate and impeller showed wear</strong> consistent with abrasion/contact.</li>
+        <li>Evidence suggested an <strong>oversized rock had jammed the pump</strong>, accelerating wear and contributing to the seized condition.</li>
+        <li>Most wet-end liner components appeared serviceable: <strong>liners can be reused</strong> (no major structural damage observed).</li>
+        <li><strong>Bearing frame damage due to water contamination</strong>: oil contained water/sludge, indicating seal failure/ingress and poor lubrication.</li>
       </ul>
 
-      <h3>What I’d improve next</h3>
+      <h3>Root cause summary</h3>
       <ul>
-        <li>One upgrade idea</li>
-        <li>One risk/mitigation</li>
+        <li><strong>Primary mechanical event:</strong> oversized rock ingestion/jamming → abnormal contact/wear at the impeller/wear plate.</li>
+        <li><strong>Secondary contributors:</strong> excessive impeller clearance → accelerated packing wear and degraded sealing performance.</li>
+        <li><strong>Consequence:</strong> water ingress → oil contamination (water/sludge) → bearing frame/bearing damage risk and reduced reliability.</li>
+      </ul>
+
+      <h3>Recommended corrective actions</h3>
+      <ul>
+        <li>Rebuild bearing assembly: <strong>replace bearings and oil seals</strong>.</li>
+        <li>Restore wet-end clearances: inspect/replace <strong>impeller + front wear plate</strong> as required and reset to spec.</li>
+        <li>Replace <strong>packing</strong> and verify gland/seal arrangement and flush condition (if applicable).</li>
+        <li>Flush/clean bearing housing and refill with correct oil; confirm contamination is eliminated.</li>
+        <li>Operational prevention: review rock/oversize control upstream (screening/strainer practices) to reduce jam events.</li>
+      </ul>
+
+      <h3>What I learned</h3>
+      <ul>
+        <li>How impeller clearance affects efficiency, wear rate, and packing/seal life in slurry service.</li>
+        <li>How a single ingestion/jam event can cascade into wear damage and sealing issues.</li>
+        <li>How to recognize lubricant contamination patterns and link them to seal failure/ingress.</li>
       </ul>
 
       <h3>Gallery</h3>
-      <p class="muted">Add images by replacing placeholders below.</p>
-      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 1</div></div>
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 2</div></div>
-        <div class="thumb" style="grid-column:span 12;"><div class="thumb-placeholder">Image 3 (wide)</div></div>
+      <p class="muted small">Photos from field inspection and teardown.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-thumb">
+          <img src="pump.jpeg" alt="SLRC pump casing overview (front)" />
+        </div>
+
+        <div class="gallery-thumb">
+          <img src="pump2.jpeg" alt="SLRC pump assembly on stand (side view)" />
+        </div>
+
+        <div class="gallery-thumb">
+          <img src="impellar.jpeg" alt="Internal wear: impeller / wear plate condition" />
+        </div>
+
+        <div class="gallery-thumb">
+          <img src="bearing.jpeg" alt="Bearing frame / seal area inspection" />
+        </div>
       </div>
+
+      <p class="muted small" style="margin-top:12px;">
+        Note: Component condition and recommendations are based on visual inspection and maintenance teardown observations on-site.
+      </p>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> Kyle Erickson</span>
-      <span class="muted">Backed by real test data</span>
+      <span class="muted">Field inspection → findings → rebuild scope</span>
     </div>
   </footer>
 
