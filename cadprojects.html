@@ -5,38 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CAD & Personal Projects — Kyle Erickson</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styling to match dark theme -->
   <style>
-    /* Keep media responsive + clean without needing to touch styles.css */
-    .media-block { margin: 14px 0 22px; }
+    .media-block {
+      margin: 20px 0 36px;
+    }
+
     .media-figure {
       margin: 0;
-      background: var(--card, #fff);
-      border: 1px solid var(--line, #e7e7e7);
-      border-radius: 14px;
+      background: linear-gradient(180deg, #0f1a2e, #0b1426);
+      border-radius: 18px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
+
     .media {
       width: 100%;
       height: auto;
       display: block;
       max-height: 520px;
-      object-fit: contain; /* Ensures full image is visible */
-      background: #0f1115; /* Nice contrast for dark renders */
+      object-fit: contain;
+      background: #0b1220;
     }
+
     .caption {
-      padding: 10px 12px 12px;
-      border-top: 1px solid var(--line, #e7e7e7);
+      padding: 16px 18px 18px;
     }
-    .caption h3 { margin: 0 0 6px; }
-    .caption p { margin: 0; }
-    .tags { margin-top: 8px; display:flex; flex-wrap:wrap; gap:8px; }
+
+    .caption h3 {
+      margin: 0 0 6px;
+      color: #e5e7eb;
+    }
+
+    .caption p {
+      margin: 0;
+      color: #9ca3af;
+    }
+
+    .tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .tag {
-      display:inline-block;
-      padding:4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
-      border: 1px solid var(--line, #e7e7e7);
-      font-size: 0.9rem;
-      color: var(--muted, #667085);
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.06);
+      color: #cbd5f5;
+      border: 1px solid rgba(255,255,255,0.12);
     }
   </style>
 </head>
@@ -57,22 +77,28 @@
   <main class="container section">
     <div class="panel">
       <h2 style="margin-top:0;">CAD & Personal Projects</h2>
-      <p class="muted">A selection of school CAD projects and personal builds focused on design, fabrication, and prototyping.</p>
+      <p class="muted">
+        A selection of school CAD projects and personal builds focused on design,
+        fabrication, and prototyping.
+      </p>
 
-      <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
+      <hr style="border:none;border-top:1px solid var(--line);margin:16px 0;">
 
-      <!-- 1) School CAD: gear -->
+      <!-- School CAD Project: Gear -->
       <section class="media-block">
         <figure class="media-figure">
           <img
             class="media"
             src="gear.png"
-            alt="SolidWorks spur gear and shaft assembly render"
+            alt="SolidWorks spur gear and shaft assembly"
             loading="lazy"
           />
           <figcaption class="caption">
             <h3>Spur Gear and Shaft Assembly (School CAD Project)</h3>
-            <p class="muted">Modeled in SolidWorks to practice gear geometry, concentric features, and shaft–hub interfaces.</p>
+            <p>
+              Modeled in SolidWorks to practice gear geometry, concentric features,
+              and shaft–hub interfaces.
+            </p>
             <div class="tags">
               <span class="tag">SolidWorks</span>
               <span class="tag">CAD</span>
@@ -82,39 +108,45 @@
         </figure>
       </section>
 
-      <!-- 2) School CAD: valve/housing -->
+      <!-- School CAD Project: Valve -->
       <section class="media-block">
         <figure class="media-figure">
           <img
             class="media"
             src="milestone2.png"
-            alt="SolidWorks mechanical valve or housing assembly render"
+            alt="SolidWorks mechanical valve or housing assembly"
             loading="lazy"
           />
           <figcaption class="caption">
             <h3>Mechanical Valve / Housing Assembly (School CAD Project)</h3>
-            <p class="muted">Assembly modeling emphasizing part relationships, mounting features, and functional clearances.</p>
+            <p>
+              Assembly modeling emphasizing part relationships, mounting features,
+              and functional clearances.
+            </p>
             <div class="tags">
               <span class="tag">SolidWorks</span>
               <span class="tag">Assemblies</span>
-              <span class="tag">DFM Basics</span>
+              <span class="tag">Design for Fit</span>
             </div>
           </figcaption>
         </figure>
       </section>
 
-      <!-- 3) Personal: 3D print -->
+      <!-- Personal Project: 3D Printing -->
       <section class="media-block">
         <figure class="media-figure">
           <img
             class="media"
             src="IMG_2292.jpeg"
-            alt="3D printed structural stand prototypes on a table"
+            alt="3D printed structural stand prototypes"
             loading="lazy"
           />
           <figcaption class="caption">
             <h3>3D-Printed Structural Stand (Personal Project)</h3>
-            <p class="muted">Designed and printed to support vertical components with a stable base; iterated to improve strength and printability.</p>
+            <p>
+              Designed and printed to support vertical components, with iterations
+              focused on stability, strength, and printability.
+            </p>
             <div class="tags">
               <span class="tag">3D Printing</span>
               <span class="tag">Prototyping</span>
@@ -124,18 +156,21 @@
         </figure>
       </section>
 
-      <!-- 4) Personal: Arduino -->
+      <!-- Personal Project: Arduino -->
       <section class="media-block">
         <figure class="media-figure">
           <img
             class="media"
             src="IMG_9445.jpeg"
-            alt="Arduino and ultrasonic sensor breadboard prototype"
+            alt="Arduino ultrasonic sensor breadboard prototype"
             loading="lazy"
           />
           <figcaption class="caption">
             <h3>Arduino Ultrasonic Sensor Prototype (Personal Project)</h3>
-            <p class="muted">Breadboard prototype using an Arduino and ultrasonic sensor for distance measurement, wiring practice, and basic sensor integration.</p>
+            <p>
+              Breadboard prototype using an Arduino and ultrasonic sensor to explore
+              basic electronics, wiring, and sensor integration.
+            </p>
             <div class="tags">
               <span class="tag">Arduino</span>
               <span class="tag">Electronics</span>
@@ -145,23 +180,18 @@
         </figure>
       </section>
 
-      <!-- Video block (replace src with your filename once you export it to your site folder) -->
+      <!-- Video -->
       <section class="media-block">
         <figure class="media-figure">
-          <video
-            class="media"
-            controls
-            preload="metadata"
-            playsinline
-          >
-            <!-- Put your video file in the same folder and rename it here -->
+          <video class="media" controls preload="metadata" playsinline>
             <source src="project-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
           <figcaption class="caption">
-            <h3>Build Demo Video</h3>
-            <p class="muted">Short clip showing the project in action. (Replace <code>project-video.mp4</code> with your actual filename.)</p>
+            <h3>Project Demo Video</h3>
+            <p>
+              Short demonstration clip showing a personal project in operation.
+            </p>
           </figcaption>
         </figure>
       </section>
@@ -172,7 +202,7 @@
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> Kyle Erickson</span>
-      <span class="muted">Built and tested</span>
+      <span class="muted">Designed • Built • Tested</span>
     </div>
   </footer>
 
