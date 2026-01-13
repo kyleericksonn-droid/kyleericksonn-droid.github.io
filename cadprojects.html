@@ -3,15 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project — Case Study</title>
+  <title>CAD & Personal Projects — Kyle Erickson</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Keep media responsive + clean without needing to touch styles.css */
+    .media-block { margin: 14px 0 22px; }
+    .media-figure {
+      margin: 0;
+      background: var(--card, #fff);
+      border: 1px solid var(--line, #e7e7e7);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .media {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 520px;
+      object-fit: contain; /* Ensures full image is visible */
+      background: #0f1115; /* Nice contrast for dark renders */
+    }
+    .caption {
+      padding: 10px 12px 12px;
+      border-top: 1px solid var(--line, #e7e7e7);
+    }
+    .caption h3 { margin: 0 0 6px; }
+    .caption p { margin: 0; }
+    .tags { margin-top: 8px; display:flex; flex-wrap:wrap; gap:8px; }
+    .tag {
+      display:inline-block;
+      padding:4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line, #e7e7e7);
+      font-size: 0.9rem;
+      color: var(--muted, #667085);
+    }
+  </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-row">
       <div>
         <h1 class="title"><a href="index.html">Kyle Erickson</a></h1>
-        <p class="subtitle">Project case study</p>
+        <p class="subtitle">CAD & Personal Projects</p>
       </div>
       <nav class="nav">
         <a href="index.html#projects">Back to projects</a>
@@ -21,47 +56,123 @@
 
   <main class="container section">
     <div class="panel">
-      <h2 style="margin-top:0;">Object-Sorting Conveyor (Mechatronics)</h2>
-      <p class="muted">Tools: SolidWorks • AVR C • Sensors • Stepper motor control • Testing</p>
+      <h2 style="margin-top:0;">CAD & Personal Projects</h2>
+      <p class="muted">A selection of school CAD projects and personal builds focused on design, fabrication, and prototyping.</p>
 
       <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
 
-      <h3>Problem</h3>
-      <p class="muted">One or two sentences: what you needed to achieve and constraints.</p>
+      <!-- 1) School CAD: gear -->
+      <section class="media-block">
+        <figure class="media-figure">
+          <img
+            class="media"
+            src="gear.png"
+            alt="SolidWorks spur gear and shaft assembly render"
+            loading="lazy"
+          />
+          <figcaption class="caption">
+            <h3>Spur Gear and Shaft Assembly (School CAD Project)</h3>
+            <p class="muted">Modeled in SolidWorks to practice gear geometry, concentric features, and shaft–hub interfaces.</p>
+            <div class="tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">CAD</span>
+              <span class="tag">Mechanical Design</span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
 
-      <h3>Approach</h3>
-      <ul>
-        <li>System design (mechanical + electrical + software)</li>
-        <li>Key decisions (sensor placement, timing logic, acceleration profile)</li>
-        <li>What you tested and how you iterated</li>
-      </ul>
+      <!-- 2) School CAD: valve/housing -->
+      <section class="media-block">
+        <figure class="media-figure">
+          <img
+            class="media"
+            src="milestone2.png"
+            alt="SolidWorks mechanical valve or housing assembly render"
+            loading="lazy"
+          />
+          <figcaption class="caption">
+            <h3>Mechanical Valve / Housing Assembly (School CAD Project)</h3>
+            <p class="muted">Assembly modeling emphasizing part relationships, mounting features, and functional clearances.</p>
+            <div class="tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Assemblies</span>
+              <span class="tag">DFM Basics</span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
 
-      <h3>Results</h3>
-      <ul>
-        <li>Performance numbers (speed, accuracy, SPI, cycle time, etc.)</li>
-        <li>Reliability improvements you made</li>
-      </ul>
+      <!-- 3) Personal: 3D print -->
+      <section class="media-block">
+        <figure class="media-figure">
+          <img
+            class="media"
+            src="IMG_2292.jpeg"
+            alt="3D printed structural stand prototypes on a table"
+            loading="lazy"
+          />
+          <figcaption class="caption">
+            <h3>3D-Printed Structural Stand (Personal Project)</h3>
+            <p class="muted">Designed and printed to support vertical components with a stable base; iterated to improve strength and printability.</p>
+            <div class="tags">
+              <span class="tag">3D Printing</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">Iteration</span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
 
-      <h3>What I’d improve next</h3>
-      <ul>
-        <li>One upgrade idea</li>
-        <li>One risk/mitigation</li>
-      </ul>
+      <!-- 4) Personal: Arduino -->
+      <section class="media-block">
+        <figure class="media-figure">
+          <img
+            class="media"
+            src="IMG_9445.jpeg"
+            alt="Arduino and ultrasonic sensor breadboard prototype"
+            loading="lazy"
+          />
+          <figcaption class="caption">
+            <h3>Arduino Ultrasonic Sensor Prototype (Personal Project)</h3>
+            <p class="muted">Breadboard prototype using an Arduino and ultrasonic sensor for distance measurement, wiring practice, and basic sensor integration.</p>
+            <div class="tags">
+              <span class="tag">Arduino</span>
+              <span class="tag">Electronics</span>
+              <span class="tag">Sensors</span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
 
-      <h3>Gallery</h3>
-      <p class="muted">Add images by replacing placeholders below.</p>
-      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 1</div></div>
-        <div class="thumb" style="grid-column:span 6;"><div class="thumb-placeholder">Image 2</div></div>
-        <div class="thumb" style="grid-column:span 12;"><div class="thumb-placeholder">Image 3 (wide)</div></div>
-      </div>
+      <!-- Video block (replace src with your filename once you export it to your site folder) -->
+      <section class="media-block">
+        <figure class="media-figure">
+          <video
+            class="media"
+            controls
+            preload="metadata"
+            playsinline
+          >
+            <!-- Put your video file in the same folder and rename it here -->
+            <source src="project-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <figcaption class="caption">
+            <h3>Build Demo Video</h3>
+            <p class="muted">Short clip showing the project in action. (Replace <code>project-video.mp4</code> with your actual filename.)</p>
+          </figcaption>
+        </figure>
+      </section>
+
     </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> Kyle Erickson</span>
-      <span class="muted">Backed by real test data</span>
+      <span class="muted">Built and tested</span>
     </div>
   </footer>
 
