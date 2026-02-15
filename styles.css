@@ -391,3 +391,29 @@ a{ color:inherit; text-decoration:none; }
   background: #000;
   border-radius: 12px;
 }
+
+/* ===== FORCE homepage card thumbnails to update ===== */
+
+#projects .card .thumb{
+  height: 190px !important;   /* force override */
+  background: #000 !important;
+}
+
+#projects .card .thumb img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Optional: per-card contain mode */
+#projects .card.fit-contain .thumb{
+  padding: 10px !important;
+}
+
+#projects .card.fit-contain .thumb img{
+  object-fit: contain !important;
+  background: #000 !important;
+  border-radius: 12px !important;
+}
