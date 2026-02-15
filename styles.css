@@ -326,3 +326,30 @@ a{ color:inherit; text-decoration:none; }
   background: #ffffff;
   padding: 8px;
 }
+/* ===== Case Study Gallery Fix (prevents cropping, does NOT affect homepage cards) ===== */
+
+/* On case-study pages, gallery images sit inside .panel .thumb */
+.panel .thumb{
+  /* Remove any fixed-height cropping behavior */
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+
+  /* keep your rounded look */
+  border-radius: 12px;
+}
+
+/* Make images scale naturally without distortion */
+.panel .thumb img{
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+
+  display: block;
+  object-fit: contain !important;
+
+  border-radius: 12px;
+  background: #fff;        /* makes drawings look clean on dark background */
+  padding: 8px;            /* subtle frame */
+  box-sizing: border-box;
+}
