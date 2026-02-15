@@ -306,50 +306,35 @@ a{ color:inherit; text-decoration:none; }
   border-radius:12px;
 }
 
-/* ===== Fix Push Rod Gallery Image Sizing (Safe for Entire Site) ===== */
+/* ===== Case Study Image Fix (ONLY inside .panel, does NOT affect cards) ===== */
 
-.panel .thumb {
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.panel .thumb img {
-  width: 100%;
-  height: auto;          /* keeps correct proportions */
-  display: block;
-  object-fit: contain;   /* prevents cropping */
-  border-radius: 12px;
-}
-
-/* Optional: give technical drawings a cleaner look on dark background */
-.panel .thumb img {
-  background: #ffffff;
-  padding: 8px;
-}
-/* ===== Case Study Gallery Fix (prevents cropping, does NOT affect homepage cards) ===== */
-
-/* On case-study pages, gallery images sit inside .panel .thumb */
+/* If a case-study page uses .panel .thumb, remove card-style cropping */
 .panel .thumb{
-  /* Remove any fixed-height cropping behavior */
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: visible !important;
-
-  /* keep your rounded look */
-  border-radius: 12px;
+  height: auto !important;         /* overrides .thumb{height:150px} */
+  overflow: visible !important;    /* overrides .thumb overflow hidden */
+  border-bottom: none !important;  /* optional: removes the “card” divider look */
 }
 
-/* Make images scale naturally without distortion */
+/* Beat the global .thumb img rule AND any inline style */
 .panel .thumb img{
   width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
+  height: auto !important;         /* stop height:100% stretching */
+  object-fit: contain !important;  /* stop cover-cropping */
+  display: block !important;
 
-  display: block;
-  object-fit: contain !important;
-
+  /* Make drawings look clean on dark background */
+  background: #fff;
+  padding: 10px;
   border-radius: 12px;
-  background: #fff;        /* makes drawings look clean on dark background */
-  padding: 8px;            /* subtle frame */
   box-sizing: border-box;
+}
+
+/* If your case-study page uses the newer gallery classes, keep them clean too */
+.gallery-thumb{
+  height: auto !important;
+}
+
+.gallery-thumb img{
+  height: auto !important;
+  object-fit: contain !important;
 }
