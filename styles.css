@@ -363,3 +363,31 @@ a{ color:inherit; text-decoration:none; }
   border-radius: 12px !important; /* overrides your inline 8px */
   box-sizing: border-box;
 }
+
+/* ===== Homepage project card thumbnails: fit photos better ===== */
+
+/* Make the thumbnail area a bit taller so images aren’t so cropped */
+.card .thumb{
+  height: 190px;              /* was 150px */
+  background: #000;
+}
+
+/* Default: fill the box nicely (good for most photos) */
+.card .thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;    /* centers the crop */
+  display: block;
+}
+
+/* If a specific card looks bad, add a special class to that card and use contain */
+.card.fit-contain .thumb{
+  padding: 10px;
+}
+
+.card.fit-contain .thumb img{
+  object-fit: contain !important;
+  background: #000;
+  border-radius: 12px;
+}
